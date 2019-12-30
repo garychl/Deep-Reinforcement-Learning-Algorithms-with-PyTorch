@@ -5,7 +5,14 @@ import os
 import gym
 from gym import wrappers
 import numpy as np
-import matplotlib.pyplot as plt
+from sys import platform
+if platform == "darwin":
+    import matplotlib
+    matplotlib.use('TkAgg')
+    import matplotlib.pyplot as plt
+else:
+    import matplotlib.pyplot as plt
+
 
 class Trainer(object):
     """Runs games for given agents. Optionally will visualise and save the results"""
